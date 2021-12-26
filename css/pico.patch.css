@@ -1,0 +1,48 @@
+/* Pico.css patchs */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1rem;
+  --typography-spacing-vertical: 0.5rem; /* default 3rem */
+}
+h1 {
+  margin-top: 0rem;
+}
+
+/* portfolio */
+nav {
+  /* display: flex; */
+  flex-direction: column;
+}
+footer {
+  background-color: var(--primary);
+  color: var(--primary-inverse);
+  text-align: center;
+  padding-top: 5px;
+  margin-top: 30px;
+  padding-bottom: 5px;
+}
+footer > small > a {
+  color: var(--primary-inverse) !important;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 480px) {
+  nav { 
+    flex-direction: row;
+  }
+  .pagination {
+    width: 30%;
+  }  
+}
+
+@media only screen and (min-width: 1048px) {
+  .project-container {
+    display: flex;
+  }
+  .project-container .project-list {
+    width: 20%;
+  }
+  .project-container .project {
+    flex: 1;
+  }
+}
+
