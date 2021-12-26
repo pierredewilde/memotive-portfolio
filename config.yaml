@@ -1,0 +1,40 @@
+# baseURL: http://memotive-portfolio.s3-website.eu-west-1.amazonaws.com/
+baseURL: https://pierredewilde.github.io/portfolio
+uglyURLs: false    
+relativeURLs: false
+languageCode: en-us
+title: Memotive's Portfolio 
+theme: basic
+buildDrafts: true
+paginate: 2
+params:
+  author: Memotive
+  description: My portfolio website
+  keywords: Portfolio, Projects, Résumé, Contact
+  contact: memotive@gmail.com
+  readSpeed: 200.0
+  GitHubUrl: https://api.github.com/search/repositories?q=typescript%20OR%20javascript&sort=stars&per_page=100
+permalinks:
+  posts: /posts/:year/:month/:slug/
+  year: /posts/:slug/
+  month: /posts/:slug/
+taxonomies:
+  year: year
+  month: month
+  tag: tags
+  category: categories
+minify:
+  tdewolff:
+    html:
+      keepWhitespace: false
+markup:
+  goldmark:
+    renderer:
+      unsafe: false
+deployment:
+  targets:
+    name: prod
+    URL: s3://memotive-portfolio/
+  matchers:
+    pattern: ^.+\\.(html|xml|js|css)$
+    gzip: true
